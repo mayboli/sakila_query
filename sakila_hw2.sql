@@ -175,7 +175,7 @@ INNER JOIN country cc
 ON c.country_id = cc.country_id;
 
 # Query 7h: 
-SELECT name
+SELECT name, SUM(amount) AS "Total"
 FROM category c
 INNER JOIN film_category fc
 ON c.category_id = fc.category_id
@@ -191,7 +191,7 @@ LIMIT 5;
 
 # Query 8a:
 CREATE VIEW top_five_genres AS (
-	SELECT name
+	SELECT name, SUM(amount) AS "Total"
 	FROM category c
 	INNER JOIN film_category fc
 	ON c.category_id = fc.category_id
